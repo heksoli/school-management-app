@@ -140,8 +140,8 @@ const Menu = () => {
                     src={link.icon}
                     width={20}
                     height={20}
-                    alt={`SchoolSync - ${link.label}`}
-                    title={`SchoolSync - ${link.label}`}
+                    alt={`School Dashboard Pro - ${link.label}`}
+                    title={`School Dashboard Pro - ${link.label}`}
                   />
                   <span className="ml-2 hidden lg:block">{link.label}</span>
                 </Link>

@@ -7,7 +7,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'School Management Dashboard',
+  title: 'School Dashboard Pro - School Management Dashboard',
   description: 'School Management System'
 };
 

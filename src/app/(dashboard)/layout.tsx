@@ -16,10 +16,10 @@ export default function DashboardLayout({
         <Link
           href="/"
           className="flex items-center justify-center gap-2 lg:justify-start"
-          title="SchoolSync"
+          title="School Dashboard Pro"
         >
-          <Image src="/logo.svg" alt="SchoolSync" width={32} height={32} />
-          <span className="hidden font-bold lg:block">SchoolSync</span>
+          <Image src="/logo.svg" alt="School Dashboard Pro" width={32} height={32} />
+          <span className="hidden font-bold lg:block">School Dashboard Pro</span>
         </Link>
         <Menu />
       </div>
