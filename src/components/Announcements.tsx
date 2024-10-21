@@ -8,7 +8,7 @@ import { displayDate, getUserDetails } from '@/lib/utils';
 const { role, currentUserId } = getUserDetails();
 
 const Announcements = async ({ searchParams }: { searchParams: { [_key: string]: string } }) => {
-  const selectedDate = searchParams.date ? moment(searchParams.date) : moment(Date.now());
+  const selectedDate = searchParams?.date ? moment(searchParams.date) : moment(Date.now());
 
   const whereClause: Prisma.AnnouncementWhereInput = {
     date: {
