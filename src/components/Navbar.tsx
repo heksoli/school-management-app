@@ -1,8 +1,14 @@
 import Image from 'next/image';
+import { UserButton } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs/server';
+
+import { SessionClaims } from '@/lib/types';
+
+const { sessionClaims } = auth();
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-end p-4 md:justify-between">
+    <div className="flex items-center justify-end p-4 pb-0 md:justify-between">
       <div className="hidden items-center gap-1.5 rounded-full px-2 text-xs ring-[1.5px] ring-gray-300 md:flex">
         <Image src="/search.png" width={14} height={14} alt="Search" />
         <input
@@ -22,10 +28,15 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <span className="text-xs font-medium leading-3">Han Solo</span>
-          <span className="text-right text-[10px] text-gray-500">Admin</span>
+          <span className="text-xs font-medium leading-3">
+            {(sessionClaims as SessionClaims).firstname} {(sessionClaims as SessionClaims).lastname}
+          </span>
+          <span className="text-right text-[10px] text-gray-500">
+            {(sessionClaims as SessionClaims).metadata?.role!}
+          </span>
         </div>
         <Image src="/avatar.png" width={36} height={36} alt="Profile" className="rounded-full" />
+        <UserButton />
       </div>
     </div>
   );
